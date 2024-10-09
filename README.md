@@ -1,34 +1,34 @@
 # Credit Risk Classification
-## Module 20 Challenge
-
-
-# Module 12 Report Template
+Module 20 Challenge
 
 ## Overview of the Analysis
-
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
 * Explain the purpose of the analysis.
+In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
+
 * Explain what financial information the data was on, and what you needed to predict.
+the financial information is about lending data, we want to predict loan status/labels.
+
 * Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
+variables to predict: loan_status, either 0 for healthy for 1 for high-risk
+
 * Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+Stages of machine learning: After loading in data, created X and y values. y value (target value) is 'loan_status' and X included all features (loan_size	interest_rate	borrower_income	debt_to_income	num_of_accounts	derogatory_marks)
+Then, split the data into testing and training values. Why?
+Next, instantiated a logistic regression model to the data.Then, fit the model using training data. Then, predicted the test data on the model.
+Using the test data, we then generate a confusion matrix. Why?
+Also using test data, we generate a classification report. Why?
+Also chose to do an accuracy score. Why?
+
 
 ## Results
-
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+- Model Accuracy: 0.99
+- Model Precision: 1.00 for 'Healthy Loan', 0.85 for 'High Risk Loan'
+- Model Recall: 0.99 for 'Healthy Loan', 0.91 for 'High Risk Loan'
 
 ## Summary
-
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-
-* Which one seems to perform best? How do you know it performs best?
+In summary, I would recommend this model to predict loan labels as it has shown that it performs well.
 * Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
 
-If you do not recommend any of the models, please justify your reasoning.
 
 
 images:
