@@ -2,7 +2,6 @@
 Module 20 Challenge
 
 ## Overview of the Analysis
-* Explain the purpose of the analysis.
 In this Challenge, we will be using various techniques to train and evaluate a model based on loan risk, using a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. This financial information covered in this data set is about lending data, and the aim is to predict loan status. Will this loan be healthy or high-risk? The variable that we are trying to predict is 'loan_status' which results in 0 for 'healthy' or 1 for 'high-risk' loans.
 After loading the data into our notebook, we created X and y values. The y value (the target value) is 'loan_status' and the X value includes all of the features that will be used to make predictions on our y value (this includes the following variables: 'loan_size', 'interest_rate', 'borrower_income', 'debt_to_income', 'num_of_accounts', and 'derogatory_marks').
 Then, we split the data into testing and training values. Having training data lets the model learn the relationships between our input and output data (by using the features and target variables). The model can make predictions on the testing data based on the parameters given by the training data. We do this by instantiatiating a logistic regression model. We fit the model using the training data and then make predictions on the testing data. Using the testing data, we generated a confusion matrix and a classification report.
