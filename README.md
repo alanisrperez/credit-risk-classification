@@ -3,37 +3,25 @@ Module 20 Challenge
 
 ## Overview of the Analysis
 * Explain the purpose of the analysis.
-In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
-
-* Explain what financial information the data was on, and what you needed to predict.
-the financial information is about lending data, we want to predict loan status/labels.
-
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-variables to predict: loan_status, either 0 for healthy for 1 for high-risk
-
-* Describe the stages of the machine learning process you went through as part of this analysis.
-Stages of machine learning: After loading in data, created X and y values. y value (target value) is 'loan_status' and X included all features (loan_size	interest_rate	borrower_income	debt_to_income	num_of_accounts	derogatory_marks)
-Then, split the data into testing and training values. Why?
-Next, instantiated a logistic regression model to the data.Then, fit the model using training data. Then, predicted the test data on the model.
-Using the test data, we then generate a confusion matrix. Why?
-Also using test data, we generate a classification report. Why?
-Also chose to do an accuracy score. Why?
+In this Challenge, we will be using various techniques to train and evaluate a model based on loan risk, using a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. This financial information covered in this data set is about lending data, and the aim is to predict loan status. Will this loan be healthy or high-risk? The variable that we are trying to predict is 'loan_status' which results in 0 for 'healthy' or 1 for 'high-risk' loans.
+After loading the data into our notebook, we created X and y values. The y value (the target value) is 'loan_status' and the X value includes all of the features that will be used to make predictions on our y value (this includes the following variables: 'loan_size', 'interest_rate', 'borrower_income', 'debt_to_income', 'num_of_accounts', and 'derogatory_marks').
+Then, we split the data into testing and training values. Having training data lets the model learn the relationships between our input and output data (by using the features and target variables). The model can make predictions on the testing data based on the parameters given by the training data. We do this by instantiatiating a logistic regression model. We fit the model using the training data and then make predictions on the testing data. Using the testing data, we generated a confusion matrix and a classification report.
+The confusion matrix evaluates the performance of the model by creating a summary of the predictions. It shows us if the predictions were efficient by giving the following numbers: True Positives (TP; correctly predicted as positive), True Negatives (TN; correctly predicted as negatives), False Positives (FP; incorrectly predicted as positive), and False Negatives (FN; incorrectly predicted as negative). These values let us calculate accuracy, precision, recall, and F1 scores, all of which examine the effectiveness of the model. These scores are provided by a classification report. Precision measures the accuracy of positive predictions (ratio of TP to the sum of TP and FP). Recall measures the model's ability to find relevant instances (ratio of TP to the sum of TP and FN). The F1 score is the mean of precision and recall, which acounts for both FP and FN. I also chose to include an accuracy score to give a view of overall correctness in the model's predictions (ratio of correct predictions to the total number of predictions).
 
 
 ## Results
 - Model Accuracy: 0.99
 - Model Precision: 1.00 for 'Healthy Loan', 0.85 for 'High Risk Loan'
 - Model Recall: 0.99 for 'Healthy Loan', 0.91 for 'High Risk Loan'
+- Model F1 Score: 1.00 for 'Healthy Loan', 0.88 for 'High Risk Loan'
+
+![test_matrix.png](https://github.com/alanisrperez/credit-risk-classification/blob/main/Images/test_matrix.png)
+
+![classification_report.png](https://github.com/alanisrperez/credit-risk-classification/blob/main/Images/classification_report.png)
+
 
 ## Summary
-In summary, I would recommend this model to predict loan labels as it has shown that it performs well.
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-
-
-images:
-![test_matrix.png](https://github.com/alanisrperez/credit-risk-classification/blob/main/Images/test_matrix.png)
-![classification_report.png](https://github.com/alanisrperez/credit-risk-classification/blob/main/Images/classification_report.png)
+In summary, I would recommend this model to predict loan labels as it has shown that it performs well. All evaluation metrics scored high, showing that the model does an efficient job of making correct predictions. Although all metrics are strong for both variables, the model is more efficient in predicting the 0s, healthy loans, than it is at predicting the 1s, high risk loans. The model correctly predicted 563 high risk loans and incorrectly predicted 102 as being high risk. I would argue that in this case it is more important to predict the 1s because a loan that may be high risk is of much bigger concern to a lending company that a loan that is healthy. Although it may not be as accurate, the model could give us insight as to what variables contribute more weight into a loan being considered high risk. It is better to be weary of a loan that shows potential to default, even if it turns out to be healthy, than to think a loan is healthy only for it to become of risk to the company.
 
 ## References
 Data for this dataset was generated by edX Boot Camps LLC, and is intended for educational purposes only.
